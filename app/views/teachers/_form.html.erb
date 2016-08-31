@@ -21,11 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
+    <%= f.date_select :birthday, start_year: 1995, end_year: Date.today.year, order: [:day, :month, :year] %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :Subject %><br>
+    <%= f.collection_select :lesson_id, Lesson.all, :id, :subject, { :prompt => "Please Select" } %>
   </div>
   <div class="actions">
     <%= f.submit %>

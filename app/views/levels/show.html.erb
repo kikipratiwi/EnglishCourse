@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @level.name %>
 </p>
+<p>
+  <strong>Students:</strong>
+	<%= render @level.students %>
+</p>
 
 <%= link_to 'Edit', edit_level_path(@level) %> |
 <%= link_to 'Back', levels_path %>

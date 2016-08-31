@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   resources :reports
   resources :lessons
   resources :rooms

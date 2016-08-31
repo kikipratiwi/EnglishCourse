@@ -9,6 +9,9 @@
       <th>Gender</th>
       <th>Birthday</th>
       <th>Address</th>
+      <th>Level</th>
+      <th>Room</th>
+      <th>Report</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +23,9 @@
         <td><%= student.gender %></td>
         <td><%= student.birthday %></td>
         <td><%= student.address %></td>
+        <td><%= link_to student.level.name, level_path(student.level_id) %></td>
+        <td><%= link_to student.room.name, room_path(student.room_id) %></td>
+        <td><%= link_to 'Report', report_path %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

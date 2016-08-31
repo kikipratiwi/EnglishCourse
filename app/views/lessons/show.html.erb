@@ -4,6 +4,10 @@
   <strong>Subject:</strong>
   <%= @lesson.subject %>
 </p>
+<p>
+  <strong>Teacher:</strong>
+  <%= render @lesson.teacher %>
+</p>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>

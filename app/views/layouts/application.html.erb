@@ -9,6 +9,9 @@
 <body>
 
 <%= yield %>
-
+<br>
+<% if !current_page?(root_path) %>
+	<%= link_to 'Home', root_path %>
+<% end %>
 </body>
 </html>

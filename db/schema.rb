@@ -50,11 +50,11 @@ ActiveRecord::Schema.define(version: 20160829043553) do
     t.text     "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "lesson_id"
+    t.integer  "level_id"
     t.integer  "room_id"
   end
 
-  add_index "students", ["lesson_id"], name: "index_students_on_lesson_id"
+  add_index "students", ["level_id"], name: "index_students_on_level_id"
   add_index "students", ["room_id"], name: "index_students_on_room_id"
 
   create_table "teachers", force: :cascade do |t|

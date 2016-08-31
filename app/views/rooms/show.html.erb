@@ -9,6 +9,10 @@
   <strong>Qty:</strong>
   <%= @room.qty %>
 </p>
+<p>
+  <strong>Students:</strong>
+	<%= render @room.students %>
+</p>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
