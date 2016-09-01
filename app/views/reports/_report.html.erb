@@ -1,0 +1,9 @@
+<tr>
+	<td><%= report.created_at.to_date %></td>
+	<td><%= report.lesson.subject %></td>
+	<td><%= report.score %></td>
+	<td><strong><%= link_to 'Delete', [report.student, report],
+								  method: :delete,
+								  class: "button",
+								 	data: { confirm: 'Are you sure?' }, :remote => true  %></strong></td>
+</tr>

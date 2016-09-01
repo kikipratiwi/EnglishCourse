@@ -25,7 +25,7 @@
         <td><%= student.address %></td>
         <td><%= link_to student.level.name, level_path(student.level_id) %></td>
         <td><%= link_to student.room.name, room_path(student.room_id) %></td>
-        <td><%= link_to 'Report', report_path %></td>
+        <td><%= link_to 'Report', student_reports_path(student) %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

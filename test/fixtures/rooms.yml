@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  qty: 1
+  capacity: 1
 
 two:
   name: MyString
-  qty: 1
+  capacity: 1

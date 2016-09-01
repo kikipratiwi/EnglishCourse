@@ -19,6 +19,21 @@
   <strong>Address:</strong>
   <%= @student.address %>
 </p>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Subject</th>
+      <th>Score</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="report">
+  	<%= render @student.reports %>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<h3>Add a score:</h3>
+<%= render "reports/form" %>
+
 <%= link_to 'Back', students_path %>

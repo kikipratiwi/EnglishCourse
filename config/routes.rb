@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :reports
-  resources :lessons
   resources :rooms
   resources :teachers
   resources :levels
-  resources :students
+  concern :reportable do
+    resources :reports
+  end
+
+  resources :students, concerns: :reportable
+  resources :lessons, concerns: :reportable
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
