@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :rooms
+  resources :rooms do
+    get "student_new"
+  end
+
   resources :teachers
   resources :levels
   concern :reportable do
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :students, concerns: :reportable
-  resources :lessons, concerns: :reportable
+  resources :lessons
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

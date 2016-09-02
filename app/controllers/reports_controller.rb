@@ -3,17 +3,21 @@ class ReportsController < ApplicationController
   before_action :set_student
 
   def index
-    @reports = @student.reports.select("lesson_id, avg(score) as final_score").group("lesson_id")
+    @reports = @student.get_avg
   end
 
   def show
-    @reports = @student.reports.where(lesson_id: params[:id])
+    @reports = @student.get_lesson(params[:id])
+  end
+
+  def new
+    @report = Report.new
   end
 
   # POST /reports
   # POST /reports.json
   def create
-    @report = @student.reports.create(params[:report].permit(:lesson_id, :score))
+    @report = @student.reports.create(report_params)
     respond_to do |format|
       if @report.save
         format.html { redirect_to @student, notice: 'Report was successfully created.' }
@@ -69,6 +73,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.fetch(:report, {})
+      params.require(:report).permit(:lesson_id, :score)
     end
 end

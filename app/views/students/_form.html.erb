@@ -35,7 +35,6 @@
     <%= f.label :room %><br>
     <%= f.collection_select :room_id, Room.all, :id, :name, { :prompt => "Please Select" } %>
   </div>
-    <%= f.label :level %>
   <div class="actions">
     <%= f.submit %>
   </div>
